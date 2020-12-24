@@ -1,0 +1,28 @@
+{
+    "name": "digirule-2u-assembly-language-support",
+    "displayName": "Digirule 2U Assembly Language Support",
+    "description": "Support for the Assembly language of the Digirule 2U 8-bit computer",
+    "version": "0.0.1",
+    "publisher": "aritzh",
+    "author": {"name": "Aritz Lopez", "email": "aritzhack@gmail.com", "url": "https://github.com/cubedtear"},
+    "repository": {"type": "git", "url": "https://github.com/cubedtear/Digirule-2U-VSCode"},
+    "engines": {
+        "vscode": "^1.52.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "digirule2uasm",
+            "aliases": ["Digirule 2U Assembly", "digirule2uasm"],
+            "extensions": [".asm"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "digirule2uasm",
+            "scopeName": "source.digirule2u",
+            "path": "./syntaxes/digirule2uasm.tmLanguage.json"
+        }]
+    }
+}

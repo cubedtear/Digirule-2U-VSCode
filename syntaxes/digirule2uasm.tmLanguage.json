@@ -1,0 +1,89 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Digirule 2U Assembly",
+	"patterns": [
+		{
+			"include": "#labels"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#symbols"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#directives"
+		},
+		{
+			"include": "#constants"
+		}
+	],
+	"repository": {
+		"labels": {
+			"patterns": [{
+				"name": "entity.name.type",
+				"match": "^\\w+\\b"
+			}]
+		},
+		"symbols": {
+			"patterns": [{
+				"name": "constant.language.digirule2uasm",
+				"match": "(?i)\\b(_z|_c|_sar|_sr|_br|_ar|_dr)\\b"
+			}]
+		},
+		"directives": {
+			"patterns": [{
+				"name": "keyword.directive.digirule2uasm",
+				"match": "(?i)\\b(BYTE|END|EQU|INCLUDE|LIST|NOLIST|NOPAGE|ORG|PAGE|SPACE)\\b"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.opcode.digirule2uasm",
+				"match": "(?i)\\b(HALT|NOP|SPEED|INITSP|COPYLA|COPYLR|COPYLI|COPYAR|COPYAI|COPYRA|COPYRR|COPYRI|COPYIA|COPYIR|COPYII|SWAPRA|SWAPRR|ADDLA|ADDRA|SUBLA|SUBRA|MUL|DIV|ANDLA|ANDRA|ORLA|ORRA|XORLA|XORRA|DECR|INCR|DECRJZ|INCRJZ|SHIFTRL|SHIFTRR|BCLR|BSET|BCHG|BTSTSC|BTSTSS|JUMP|JUMPI|CALL|CALLI|RETURN|RETLA|ADDRPC|RANDA|COMOUT|COMIN|COMRDY|PINOUT|PININ|PINDIR)\\b"
+			}]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.digirule2uasm",
+				"match": "(;|\\*).*"
+			}]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric.hexadecimal.digirule2uasm",
+					"match": "\\b0x[\\dA-Fa-f]+\\b"
+				},
+				{
+					"name": "constant.numeric.decimal.digirule2uasm",
+					"match": "\\b\\d+\\b"
+				},
+				{
+					"name": "constant.numeric.binary.digirule2uasm",
+					"match": "\\b0b\\d+\\b"
+				},
+				{
+					"name": "constant.numeric.character.digirule2uasm",
+					"match": "\\b'.'\\b"
+				},
+				{
+					"name": "constant.numeric.location.digirule2uasm",
+					"match": "\\b\\*\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.single.digirule2uasm",
+			"begin": "'",
+			"end": "'"
+		}
+	},
+	"scopeName": "source.digirule2u"
+}
